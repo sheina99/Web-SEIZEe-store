@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - SEIZE STORE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-wrap">
+            <a href="index.html" class="logo">💎 SEIZE STORE</a>
+            <nav>
+                <a href="index.html">Beranda</a>
+                <a href="produk.html">Produk</a>
+                <a href="tentang.html">Tentang</a>
+                <a href="kontak.html" class="active">Kontak</a>
+            </nav>
+            <div class="header-actions">
+                <span id="userBadge" class="user-badge hidden"></span>
+                <button id="btnAuth" class="btn-icon" onclick="openAuthModal()">🔑 Masuk / Daftar</button>
+                <button class="btn-icon" onclick="openCartModal()">🛒 Keranjang (<span id="cartCount">0</span>)</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container page-content">
+        <h2 style="color: var(--primary-dark); margin-bottom: 5px;">Hubungi Kami</h2>
+        <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 25px;">Tim customer care SEIZE STORE siap membantu pertanyaan, transaksi, maupun info stok Anda setiap hari (08.00 - 21.00 WIB).</p>
+
+        <!-- CTA Belanja Langsung -->
+        <div style="background: linear-gradient(135deg, #5b87b8 0%, #7ca4d0 100%); color: white; border-radius: 10px; padding: 20px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <div>
+                <h3 style="font-size: 18px; margin-bottom: 4px;">Ingin Langsung Belanja?</h3>
+                <p style="font-size: 13px; opacity: 0.9;">Pilih koleksi Kalung, Gelang, dan One Set pilihanmu sekarang juga.</p>
+            </div>
+            <a href="produk.html" class="btn-main" style="padding: 10px 20px; text-decoration: none;">🛍️ Lihat Katalog Produk</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+            
+            <!-- Kartu Informasi Kontak Lengkap -->
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; gap: 15px; align-items: center;">
+                    <div style="background: var(--light-blue); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px;">📱</div>
+                    <div>
+                        <h4 style="font-size: 14px; color: var(--primary-dark);">Customer Care WhatsApp</h4>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 4px;">+62 895-3300-xxxx</p>
+                        <a href="https://wa.me/62895330027340?text=Halo%20SEIZE%20STORE,%20saya%20ingin%20bertanya" target="_blank" style="color: var(--primary-blue); font-size: 12px; font-weight: bold; text-decoration: none;">💬 Chat Langsung di WA &rarr;</a>
+                    </div>
+                </div>
+
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; gap: 15px; align-items: center;">
+                    <div style="background: var(--light-blue); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px;">📧</div>
+                    <div>
+                        <h4 style="font-size: 14px; color: var(--primary-dark);">Email Resmi</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">seizse@seizestore.com</p>
+                    </div>
+                </div>
+
+                <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; display: flex; gap: 15px; align-items: center;">
+                    <div style="background: var(--light-blue); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px;">📍</div>
+                    <div>
+                        <h4 style="font-size: 14px; color: var(--primary-dark);">Lokasi Store</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Pemalang, Jawa Tengah, Indonesia</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulir Pesan Interaktif -->
+            <div style="background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px;">
+                <h3 style="font-size: 16px; color: var(--primary-dark); margin-bottom: 15px;">Kirim Pesan Langsung</h3>
+                <form onsubmit="alert('Terima kasih! Pesan Anda telah terkirim ke tim SEIZE STORE.'); return false;">
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" placeholder="Masukkan nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email / No. WhatsApp</label>
+                        <input type="text" placeholder="Kontak yang bisa dihubungi" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pesan Anda</label>
+                        <textarea rows="4" placeholder="Tuliskan pertanyaan atau saran..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Kirim Pesan Sekarang</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Daftar / Masuk Akun</h3>
+                <button class="close-modal" onclick="closeModal('authModal')">✕</button>
+            </div>
+            <form id="authForm" onsubmit="handleAuth(event)">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="authName" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label>Email / No. HP</label>
+                    <input type="text" id="authEmail" placeholder="08123456789 atau email@mail.com" required>
+                </div>
+                <button type="submit" class="btn-submit">Simpan Akun</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3>Keranjang Belanja</h3>
+                <button class="close-modal" onclick="closeModal('cartModal')">✕</button>
+            </div>
+            <div id="cartItemsList"></div>
+            
+            <div id="checkoutFormSection" style="margin-top: 15px; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+                <h4>Total Tagihan: Rp <span id="cartTotal">0</span></h4>
+                
+                <div class="form-group" style="margin-top: 10px;">
+                    <label>Alamat Pengiriman</label>
+                    <textarea id="coAddress" rows="2" placeholder="Masukkan alamat pengiriman lengkap..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Metode Pembayaran</label>
+                    <select id="coPaymentMethod">
+                        <option value="dana">DANA</option>
+                        <option value="gopay">GoPay</option>
+                        <option value="ovo">OVO</option>
+                        <option value="qris">QRIS All Payment</option>
+                        <option value="tf">Transfer Bank (BCA/BRI/Mandiri)</option>
+                    </select>
+                </div>
+
+                <button class="btn-wa" onclick="checkoutOrder()">📲 Bayar & Pesan via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <strong>SEIZE STORE</strong>. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
